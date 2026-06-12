@@ -166,6 +166,22 @@
     background: radial-gradient(circle 600px at 0% 50%, rgba(217,31,31,0.05) 0%, transparent 70%);
   }
 
+  #hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-vid{position:absolute;inset:0;z-index:0}
+.hero-vid video{width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero-vid::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,13,1) 0%,rgba(13,13,13,.5) 50%,rgba(13,13,13,.25) 100%)}
+.hero-body{position:relative;z-index:1;padding:0 4%;max-width:1000px}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:700;letter-spacing:4px;color:var(--red);text-transform:uppercase;margin-bottom:1.4rem;opacity:0;animation:fadeUp .7s .3s forwards}
+.hero-tag::before{content:'';width:28px;height:1px;background:var(--red)}
+.hero-h{font-size:clamp(3rem,7vw,6.5rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:1.2rem;opacity:0;animation:fadeUp .8s .5s forwards}
+.hero-h em{font-style:normal;color:var(--red)}
+.hero-p{font-size:clamp(.9rem,1.4vw,1rem);color:var(--muted);line-height:1.9;max-width:520px;margin-bottom:2.2rem;font-weight:300;opacity:0;animation:fadeUp .8s .7s forwards}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .9s forwards}
+.btn-red{background:var(--red);color:#fff;border:none;font-family:var(--font);font-weight:700;font-size:.82rem;letter-spacing:.5px;padding:.8rem 1.8rem;border-radius:2px;cursor:pointer;transition:.2s;display:inline-block}
+.btn-red:hover{opacity:.85;transform:translateY(-2px)}
+.btn-out{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.22);font-family:var(--font);font-weight:600;font-size:.82rem;padding:.8rem 1.8rem;border-radius:2px;cursor:pointer;transition:.2s;display:inline-block}
+.btn-out:hover{border-color:var(--red);color:var(--red)}
+
   .section-eyebrow {
     display: inline-flex; align-items: center; gap: 0.5rem;
     color: var(--red); font-size: 0.8rem; font-weight: 700;
@@ -541,6 +557,9 @@
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
+  <video autoplay muted loop playsinline preload="auto" id="hero-video">
+      <source src="hero.mp4" type="video/mp4">
+    </video>
 
   <!-- Decorative SVG lines (fingerprints / arcs) -->
   <div class="hero-lines">
