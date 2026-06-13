@@ -382,25 +382,26 @@ h1,h2,h3,h4,.display{font-family:"Cairo",sans-serif;line-height:1.2}
 /* =========================================================
    PORTFOLIO PAGE hero + cards
    ========================================================= */
-.pf-hero{position:relative;padding:170px 0 70px;overflow:hidden;isolation:isolate}
+.pf-hero{position:relative;padding:140px 0 0;overflow:hidden;isolation:isolate}
 .pf-hero .bgimg{position:absolute;inset:0;z-index:-2}
 .pf-hero .bgimg img{width:100%;height:100%;object-fit:cover}
 .pf-hero::before{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg,rgba(8,8,11,.7),rgba(8,8,11,.97)),
-  linear-gradient(270deg,rgba(8,8,11,.3),rgba(8,8,11,.9))}
-.pf-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.pf-headline{text-align:start}
-.pf-headline .eyebrow{margin-bottom:12px}
-.pf-headline h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:900;line-height:1.05;position:relative;padding-bottom:20px}
-.pf-headline h1::after{content:"";position:absolute;inset-block-end:0;inset-inline-start:0;width:72px;height:5px;background:var(--accent);border-radius:3px}
+  background:linear-gradient(180deg,rgba(8,8,11,.55),rgba(8,8,11,.88)),
+  linear-gradient(270deg,rgba(8,8,11,.2),rgba(8,8,11,.75))}
+.pf-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding-bottom:60px}
+.pf-headline{text-align:end;order:1}
+.pf-headline .eyebrow{justify-content:flex-end;margin-bottom:12px}
+.pf-headline h1{font-size:clamp(3.2rem,7vw,6rem);font-weight:900;line-height:1.0;position:relative;padding-bottom:20px}
+.pf-headline h1::after{content:"";position:absolute;inset-block-end:0;inset-inline-end:0;width:72px;height:5px;background:var(--accent);border-radius:3px}
 .pf-headline h1 .hl{color:var(--accent);display:block}
-.pf-headline p{color:var(--muted);font-size:1.08rem;margin-top:20px;max-width:440px}
-.pf-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pf-headline p{color:var(--muted);font-size:1.08rem;margin-top:20px;margin-inline-start:auto;max-width:440px}
+.pf-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;order:2}
 .stat{background:rgba(20,20,25,.7);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;backdrop-filter:blur(6px)}
 .stat .num{font-family:"Poppins",sans-serif;font-weight:700;font-size:2.4rem;color:var(--accent);line-height:1}
 .stat .lbl{color:var(--muted);font-family:"Cairo",sans-serif;font-size:.95rem;margin-top:8px}
 
-.pf-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:8px 0 36px;flex-wrap:wrap-reverse}
+.pf-filter-strip{background:rgba(8,8,11,.85);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.pf-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0;flex-wrap:wrap-reverse}
 .pf-count{color:var(--muted-2);font-size:.9rem;font-family:"Cairo",sans-serif}
 
 /* portfolio masonry-ish grid */
