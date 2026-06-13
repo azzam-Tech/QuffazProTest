@@ -134,14 +134,12 @@ h1,h2,h3,h4,.display{font-family:"Cairo",sans-serif;line-height:1.2}
 @keyframes kenburns{from{transform:scale(1.04)}to{transform:scale(1.14)}}
 .hero-media::after{
   content:"";position:absolute;inset:0;
-  background:
-    linear-gradient(180deg,rgba(8,8,11,.55) 0%,rgba(8,8,11,.25) 40%,rgba(8,8,11,.92) 100%),
-    linear-gradient(280deg,rgba(8,8,11,.7),rgba(8,8,11,.15));
+  background:linear-gradient(180deg,rgba(8,8,11,.0) 0%,rgba(8,8,11,.0) 50%,rgba(8,8,11,.75) 100%);
 }
 .hero-inner{position:relative;z-index:2;width:100%;max-width:var(--maxw);margin-inline:auto;padding:120px 28px 90px;text-align:center}
 .hero h1{
-  font-size:clamp(2.2rem,5.4vw,4.4rem);font-weight:900;letter-spacing:-.02em;
-  margin-bottom:22px;text-shadow:0 6px 40px rgba(0,0,0,.5);
+  font-size:clamp(1.6rem,3vw,2.8rem);font-weight:900;letter-spacing:-.02em;
+  margin-bottom:22px;text-shadow:0 3px 18px rgba(0,0,0,.7);
 }
 .hero h1 .hl{color:var(--accent)}
 .hero p.lead{
