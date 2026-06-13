@@ -173,7 +173,7 @@ h1,h2,h3,h4,.display{font-family:"Cairo",sans-serif;line-height:1.2}
 .elements{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .elements span{
   display:inline-flex;align-items:center;gap:8px;
-  padding:8px 16px;border:1px solid var(--line-2);border-radius:40px;
+  padding:8px 16px;border:1px solid var(--line-2);border-radius:4px;
   font-family:"Cairo",sans-serif;font-weight:500;font-size:.9rem;color:#cfcfd6;
   transition:.3s;
 }
@@ -255,12 +255,12 @@ h1,h2,h3,h4,.display{font-family:"Cairo",sans-serif;line-height:1.2}
    ========================================================= */
 .filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:40px}
 .filter-btn{
-  padding:10px 22px;border-radius:40px;border:1px solid var(--line-2);
+  padding:10px 22px;border-radius:4px;border:1px solid var(--line-2);
   font-family:"Cairo",sans-serif;font-weight:700;font-size:.92rem;color:var(--muted);
   transition:.3s;
 }
 .filter-btn:hover{color:var(--text);border-color:var(--text)}
-.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 10px 26px rgba(232,71,43,.3)}
+.filter-btn.active{background:#b5301b;border-color:#b5301b;color:#fff;box-shadow:0 10px 26px rgba(181,48,27,.35)}
 
 .works-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .work-card{
