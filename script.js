@@ -288,7 +288,27 @@ function buildWaveforms(){
   });
 }
 
-/* ---------- boot ---------- */
+/* ── mobile parallax ── */
+function initStoryParallax(){
+  const frame = document.querySelector('.story-visual .frame');
+  const img   = frame && frame.querySelector('img');
+  if (!frame || !img) return;
+  let ticking = false;
+  const run = () => {
+    if (window.innerWidth > 900){ img.style.transform=''; return; }
+    const rect  = frame.getBoundingClientRect();
+    const viewH = window.innerHeight;
+    // how far the section center is from viewport center (-1 to 1)
+    const progress = (viewH/2 - (rect.top + rect.height/2)) / viewH;
+    // shift image: moves at 30% of scroll speed → stays visible, creates depth
+    const shift = progress * rect.height * 0.30;
+    img.style.transform = `translateY(${shift}px)`;
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => { if(!ticking){ requestAnimationFrame(run); ticking=true; } }, {passive:true});
+  window.addEventListener('resize', run);
+  run();
+}
 document.addEventListener("DOMContentLoaded", () => {
   renderReel();
   initReelFilters();
@@ -300,4 +320,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initForm();
   buildWaveforms();
   initReveal();
+  initStoryParallax();
 });
