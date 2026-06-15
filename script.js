@@ -131,27 +131,35 @@ function renderPhotos(){
    PORTFOLIO PAGE — works grid
    ========================================================= */
 const PORTFOLIO = [
-  { t:"بين الأيدي",        type:"فيلم وثائقي · وزارة الثقافة",   dur:"٤٢ دقيقة", cat:"doc",   badge:"وثائقي",   b:"b-doc"  },
-  { t:"ألوان الصحراء",     type:"فيلم وثائقي · أرامكو السعودية",  dur:"٢٨ دقيقة", cat:"doc",   badge:"وثائقي",   b:"b-doc",  wide:true },
-  { t:"أفق",               type:"فيلم قصير · إنتاج مستقل",        dur:"١٨ دقيقة", cat:"short", badge:"فيلم قصير", b:"b-short" },
-  { t:"رؤية تتشكّل",       type:"فيلم مؤسسي · نيوم",             dur:"٦ دقائق",  cat:"corp",  badge:"شركات",    b:"b-corp" },
-  { t:"رائحة المكان",      type:"إعلان تجاري · دار العود",        dur:"٦٠ ثانية", cat:"ad",    badge:"إعلان",    b:"b-ad"   },
-  { t:"صيّادو البحر الأحمر", type:"فيلم وثائقي · وزارة البيئة",   dur:"٣٥ دقيقة", cat:"doc",   badge:"وثائقي",   b:"b-doc"  },
-  { t:"موسم الرياض",       type:"تغطية فعالية · هيئة الترفيه",    dur:"١٢ دقيقة", cat:"event", badge:"فعالية",   b:"b-event"},
-  { t:"مائدة",             type:"إعلان تجاري · مطاعم الحضراء",    dur:"٤٥ ثانية", cat:"ad",    badge:"إعلان",    b:"b-ad"   },
-  { t:"أرض وماء",          type:"فيلم قصير · مهرجان أفلام السعودية", dur:"٢٢ دقيقة", cat:"short", badge:"فيلم قصير", b:"b-short" },
-  { t:"إرث البنيان",       type:"فيلم مؤسسي · بنك الرياض",       dur:"٤ دقائق",  cat:"corp",  badge:"شركات",    b:"b-corp" },
-  { t:"قيادة الطموح",      type:"إعلان تجاري · تويوتا السعودية",  dur:"٩٠ ثانية", cat:"ad",    badge:"إعلان",    b:"b-ad"   },
-  { t:"التقنية تتكلم",     type:"فيلم مؤسسي · STC",              dur:"٥ دقائق",  cat:"corp",  badge:"شركات",    b:"b-corp", wide:true }
+  { t:"بين الأيدي",        type:"فيلم وثائقي · وزارة الثقافة",   dur:"٤٢ دقيقة", cat:"doc",   badge:"وثائقي",   b:"b-doc",  id:"bayn-alaydi", client:"وزارة الثقافة", desc:"وثائقيٌّ يرصد الحِرف اليدوية السعودية بين أنامل صنّاعها، ويوثّق إرثاً يُنقل من جيلٍ إلى جيل." },
+  { t:"ألوان الصحراء",     type:"فيلم وثائقي · أرامكو السعودية",  dur:"٢٨ دقيقة", cat:"doc",   badge:"وثائقي",   b:"b-doc",  wide:true, id:"alwan-alsahra", client:"أرامكو السعودية", desc:"رحلةٌ بصرية في تضاريس الجزيرة وألوانها، تُبرز التنوّع الطبيعي بعينٍ سينمائية متأنّية." },
+  { t:"أفق",               type:"فيلم قصير · إنتاج مستقل",        dur:"١٨ دقيقة", cat:"short", badge:"فيلم قصير", b:"b-short", id:"ufuq", client:"إنتاج مستقل", desc:"فيلمٌ قصير يتأمّل الحلم والمسافة، بلغةٍ بصرية شاعرية ومونتاجٍ هادئ." },
+  { t:"رؤية تتشكّل",       type:"فيلم مؤسسي · نيوم",             dur:"٦ دقائق",  cat:"corp",  badge:"شركات",    b:"b-corp", id:"ruya", client:"نيوم", desc:"فيلمٌ مؤسسي يحكي تحوّل الرؤية إلى عمران، عبر تصويرٍ معماري وجوّي يُبرز ضخامة المشروع." },
+  { t:"رائحة المكان",      type:"إعلان تجاري · دار العود",        dur:"٦٠ ثانية", cat:"ad",    badge:"إعلان",    b:"b-ad",   id:"raehat-almakan", client:"دار العود", desc:"إعلانٌ حسّي يترجم عبق العود إلى صورة، بإضاءةٍ دافئة وإيقاعٍ أنيق." },
+  { t:"صيّادو البحر الأحمر", type:"فيلم وثائقي · وزارة البيئة",   dur:"٣٥ دقيقة", cat:"doc",   badge:"وثائقي",   b:"b-doc",  id:"sayyadu", client:"وزارة البيئة", desc:"وثائقيٌّ يلازم صيّادي البحر الأحمر في يومهم، ويكشف علاقتهم العميقة بالماء." },
+  { t:"موسم الرياض",       type:"تغطية فعالية · هيئة الترفيه",    dur:"١٢ دقيقة", cat:"event", badge:"فعالية",   b:"b-event", id:"mawsim", client:"هيئة الترفيه", desc:"تغطيةٌ شاملة لأجواء الموسم وزخمه، بكاميراتٍ متعددة تنقل نبض الحدث لحظةً بلحظة." },
+  { t:"مائدة",             type:"إعلان تجاري · مطاعم الحضراء",    dur:"٤٥ ثانية", cat:"ad",    badge:"إعلان",    b:"b-ad",   id:"maeda", client:"مطاعم الحضراء", desc:"إعلانٌ يقدّم الطبق كقطعةٍ فنية، بتصويرٍ قريب يُشهّي ويُبهر." },
+  { t:"أرض وماء",          type:"فيلم قصير · مهرجان أفلام السعودية", dur:"٢٢ دقيقة", cat:"short", badge:"فيلم قصير", b:"b-short", id:"ard-wama", client:"مهرجان أفلام السعودية", desc:"فيلمٌ قصير عن التشبّث بالأرض والحنين للماء، شارك في مهرجان أفلام السعودية." },
+  { t:"إرث البنيان",       type:"فيلم مؤسسي · بنك الرياض",       dur:"٤ دقائق",  cat:"corp",  badge:"شركات",    b:"b-corp", id:"irth", client:"بنك الرياض", desc:"فيلمٌ مؤسسي يوثّق العمارة الداخلية لفروع المصرفية الخاصة، بعينٍ تُبرز فخامة التفاصيل." },
+  { t:"قيادة الطموح",      type:"إعلان تجاري · تويوتا السعودية",  dur:"٩٠ ثانية", cat:"ad",    badge:"إعلان",    b:"b-ad",   id:"qiyada", client:"تويوتا السعودية", desc:"إعلانٌ يقرن الطموح بالطريق، بتصويرٍ ديناميكي ومعالجةٍ لونية حيّة." },
+  { t:"التقنية تتكلم",     type:"فيلم مؤسسي · STC",              dur:"٥ دقائق",  cat:"corp",  badge:"شركات",    b:"b-corp", wide:true, id:"taqniya", client:"STC", desc:"فيلمٌ مؤسسي يجسّد حضور التقنية في الحياة اليومية، بأسلوبٍ سرديّ معاصر." }
 ];
+
+/* وسوم العمل حسب التصنيف (تُعرض في صفحة التفاصيل) */
+const WD_TAGS = {
+  doc:   ["تصوير وثائقي","مونتاج","تعليق صوتي","تلوين"],
+  ad:    ["إخراج إعلاني","تصوير","موشن جرافيك","معالجة لونية"],
+  corp:  ["فيلم مؤسسي","تصوير معماري","تصوير جوي","معالجة رقمية"],
+  short: ["إخراج","سيناريو","تصوير سينمائي","مونتاج"],
+  event: ["تغطية حدث","تعدد كاميرات","بثّ مباشر","مونتاج سريع"]
+};
 
 function renderPortfolio(){
   const grid = document.getElementById("pfGrid");
   if (!grid) return;
   grid.innerHTML = PORTFOLIO.map((p, i) => {
-    const vId = vid(i);
     return `
-      <article class="pf-card${p.wide ? " wide" : ""} reveal" data-cat="${p.cat}" data-video="${vId}" tabindex="0" role="button" aria-label="تشغيل ${p.t}">
+      <a class="pf-card${p.wide ? " wide" : ""} reveal" href="work.html?id=${p.id}" data-cat="${p.cat}" aria-label="عرض تفاصيل ${p.t}">
         <img src="${imgUrl(img(i))}" alt="${p.t}" loading="lazy" data-gid="${img(i)}" data-fb="${i}">
         <span class="pf-badge ${p.b}">${p.badge}</span>
         <span class="pf-play">${ICON.play}</span>
@@ -160,7 +168,7 @@ function renderPortfolio(){
           <h3>${p.t}</h3>
           <div class="pf-dur">${p.dur}</div>
         </div>
-      </article>`;
+      </a>`;
   }).join("");
   grid.querySelectorAll("img[data-fb]").forEach(el => withFallback(el, +el.dataset.fb));
   const count = document.getElementById("pfCount");
@@ -183,6 +191,63 @@ function initPortfolioFilters(){
     const count = document.getElementById("pfCount");
     if (count) count.textContent = `${shown} عمل`;
   }));
+}
+
+/* =========================================================
+   WORK DETAIL PAGE (work.html?id=...) — info + media grid
+   ========================================================= */
+function renderWorkDetail(){
+  const gal = document.getElementById("wdGallery");
+  if (!gal) return;                                  // not on the work page
+  const id = new URLSearchParams(location.search).get("id");
+  const n  = Math.max(0, PORTFOLIO.findIndex(p => p.id === id));
+  const w  = PORTFOLIO[n] || PORTFOLIO[0];
+
+  /* title + client */
+  const titleEl = document.getElementById("wdTitle");
+  if (titleEl) titleEl.innerHTML = `${w.t}<span class="wd-client"> | ${w.client}</span>`;
+  const descEl = document.getElementById("wdDesc");
+  if (descEl) descEl.textContent = w.desc;
+  document.title = `${w.t} · قفّاز`;
+
+  /* index number (01, 02, …) */
+  const numEl = document.getElementById("wdNum");
+  if (numEl) numEl.textContent = String(n + 1).padStart(2, "0");
+
+  /* client logo with text fallback */
+  const logo = document.getElementById("wdLogo");
+  if (logo){
+    const im = new Image();
+    im.src = `assets/logos/${w.id}.svg`;
+    im.alt = w.client;
+    im.onerror = () => { logo.classList.add("is-text"); logo.textContent = w.client; };
+    logo.innerHTML = "";
+    logo.appendChild(im);
+  }
+
+  /* tags */
+  const tagsEl = document.getElementById("wdTags");
+  if (tagsEl) tagsEl.innerHTML = (WD_TAGS[w.cat] || []).map(t => `<span>${t}</span>`).join("");
+
+  /* media: one video + five images (replace later with the real set) */
+  const media = [{ kind:"video", id:vid(n) }];
+  for (let k = 0; k < 5; k++) media.push({ kind:"img", id:img(n + k * 2) });
+
+  gal.innerHTML = media.map((m, k) => {
+    if (m.kind === "video"){
+      return `
+        <article class="wd-item" data-video="${m.id}" tabindex="0" role="button" aria-label="تشغيل الفيديو">
+          <img src="${thumbUrl(m.id)}" alt="${w.t}" loading="lazy" data-gid="${m.id}" data-fb="${k}">
+          <span class="play-badge">${ICON.play}</span>
+        </article>`;
+    }
+    return `
+      <figure class="wd-item" data-img="${m.id}" tabindex="0" role="button" aria-label="عرض الصورة">
+        <img src="${imgUrl(m.id)}" alt="${w.t}" loading="lazy" data-gid="${m.id}" data-fb="${k}">
+        <span class="wd-ico">${ICON.expand}</span>
+      </figure>`;
+  }).join("");
+  gal.querySelectorAll("img[data-fb]").forEach(el => withFallback(el, +el.dataset.fb));
 }
 
 /* =========================================================
@@ -318,6 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPhotos();
   renderPortfolio();
   initPortfolioFilters();
+  renderWorkDetail();
   initLightbox();
   initHeader();
   initForm();
